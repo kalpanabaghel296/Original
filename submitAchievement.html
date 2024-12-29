@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Achievement</title>
+  <link rel="stylesheet" href="submitAchievement.css">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <h1>Innovation Excellence Management System</h1>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="studen_dashboard.html">Dashboard</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="form-container">
+    <h2>Submit Your Achievement</h2>
+    <form id="submitAchievementForm" enctype="multipart/form-data">
+      <input type="text" id="achievementTitle" name="achievementTitle" placeholder="Achievement Title" required>
+      <textarea id="achievementDescription" name="achievementDescription" placeholder="Achievement Description" required></textarea>
+      <input type="file" id="achievementFile" name="achievementFile" accept="image/*,application/pdf" />
+      <input type="hidden" id="student_id" name="student_id" value="12345"> <!-- Assuming student_id is fetched dynamically -->
+      <button type="submit">Submit Achievement</button>
+    </form>
+    <p id="statusMessage" style="color: green;"></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Innovation Excellence Management System. All Rights Reserved.</p>
+  </footer>
+
+  <script src="submitAchievement.js"></script>
+</body>
+</html>

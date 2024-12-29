@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Innovation Dashboard</title>
+  <link rel="stylesheet" href="Department_innovation.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <h1>Department Innovation Dashboard</h1>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Department Overview -->
+  <div class="container">
+    <h2>Explore Innovation Achievements by Department</h2>
+    
+    <div class="departments">
+      <div class="department-card">
+        <h3>Institute of Engineering Technology (IET)</h3>
+        <a href="iet_department.html" class="view-btn">View Achievements</a>
+      </div>
+      <div class="department-card">
+        <h3>Institute of Management</h3>
+        <a href="im_department.html" class="view-btn">View Achievements</a>
+      </div>
+      <div class="department-card">
+        <h3>Design</h3>
+        <a href="design_depart.html" class="view-btn">View Achievements</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Department Innovation Stats -->
+  <div class="innovation-stats">
+    <h3>Department Innovation Stats</h3>
+    <div id="statsContainer">
+      <!-- Stats will be populated here dynamically -->
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Innovation Excellence Management System. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script for Fetching and Displaying Department Stats -->
+  <script>
+    // Fetch the department stats from the backend
+    fetch('/department/innovation-stats')
+      .then(response => response.json())
+      .then(data => {
+        // Loop through the data and create boxes to display each department's stats
+        const statsContainer = document.getElementById('statsContainer');
+        for (const [department, stats] of Object.entries(data)) {
+          const statBox = document.createElement('div');
+          statBox.className = 'stat-box';
+          statBox.innerHTML = `
+            <h4>${department}</h4>
+            <p><strong>Research Achievements:</strong> ${stats.research}</p>
+            <p><strong>Entrepreneurship Achievements:</strong> ${stats.entrepreneurship}</p>
+            <p><strong>Placements Achievements:</strong> ${stats.placements}</p>
+          `;
+          statsContainer.appendChild(statBox);
+        }
+      })
+      .catch(error => console.error('Error fetching department stats:', error));
+  </script>
+</body>
+</html>

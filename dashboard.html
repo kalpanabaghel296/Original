@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Dashboard</h1>
+    <div class="modules">
+      <div class="module" id="studentModule">
+        <h3>Student</h3>
+        
+        <button onclick="window.location.href ='studen_dashbard.html'">Go to Student Dashboard</button>
+      </div>
+      <div class="module" id="facultyModule">
+        <h3>Faculty</h3>
+        
+        <button onclick="window.location.href ='faculty_dashboard.html'">Go to Faculty Dashboard</button>
+      </div>
+      <div class="module" id="adminModule">
+        <h3>Admin</h3>
+        
+        <button onclick="navigateTo('admin')">Go to Admin Dashboard</button>
+      </div>
+      <div class="module" id="departmentModule">
+        <h3>Department Innovation</h3>
+       
+        <button onclick="window.location.href='Department_innovation.html'">Go to Department Innovation</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

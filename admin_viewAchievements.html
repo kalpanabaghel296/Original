@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Achievements</title>
+  <link rel="stylesheet" href="viewAchievment_admin.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <h1>View Achievements</h1>
+      <nav>
+        <ul>
+          <li><a href="admin_dashboard.html">Dashboard</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Achievements List</h2>
+    <p>Here are all the approved achievements submitted by users.</p>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="searchInput" onkeyup="searchAchievements()" placeholder="Search by User/Department">
+    </div>
+
+    <!-- Achievements Table -->
+    <div class="achievements-table-container">
+      <table class="achievements-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>User</th>
+            <th>Department</th>
+            <th>Date</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody id="achievementsTable">
+          <!-- Manually added achievements -->
+          <tr>
+            <td>AI-Powered Robot</td>
+            <td>Student</td>
+            <td>IET</td>
+            <td>2024-10-12</td>
+            <td>Created a robot for real-time object detection.</td>
+          </tr>
+          <tr>
+            <td>Eco-Friendly Packaging</td>
+            <td>Faculty</td>
+            <td>Design</td>
+            <td>2024-11-05</td>
+            <td>Developed biodegradable packaging for consumer goods.</td>
+          </tr>
+          <tr>
+            <td>Blockchain-Based Voting System</td>
+            <td>Student</td>
+            <td>IM</td>
+            <td>2024-11-08</td>
+            <td>Designed a secure and transparent voting system using blockchain technology.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Innovation Excellence Management System. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Search Functionality -->
+  <script>
+    // Function to filter achievements by User/Department
+    function searchAchievements() {
+      const input = document.getElementById('searchInput');
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById('achievementsTable');
+      const rows = table.getElementsByTagName('tr');
+
+      // Loop through all table rows, and hide those that don't match the search query
+      for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        if (cells.length > 0) {
+          const user = cells[1].textContent.toLowerCase();
+          const department = cells[2].textContent.toLowerCase();
+          if (user.includes(filter) || department.includes(filter)) {
+            rows[i].style.display = '';
+          } else {
+            rows[i].style.display = 'none';
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

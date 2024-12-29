@@ -1,0 +1,98 @@
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 30;
+  }
+  
+  .navbar ul li {
+    display: inline;
+    margin: 30 10px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Container Styling */
+  .container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+  }
+  
+  /* Heading Styling */
+  h2 {
+    color: #007bff;
+  }
+  
+  /* Achievements Table Styling */
+  .achievements-table-container {
+    margin: 20px auto;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .achievements-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .achievements-table th,
+  .achievements-table td {
+    border: 1px solid #007bff; /* Visible borders */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .achievements-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .achievements-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .achievements-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+  }
+  

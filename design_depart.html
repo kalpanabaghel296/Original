@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Department - Achievements</title>
+  <link rel="stylesheet" href="design_depart.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <h1>Design Department - Achievements</h1>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="department_innovation.html">Back to Departments</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Design Department - Achievements</h2>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search by Student ID or Achievement Title" oninput="searchAchievements()">
+      <button onclick="searchAchievements()">Search</button>
+    </div>
+
+    <!-- Achievements List -->
+    <div id="achievementsList" class="achievements-list">
+      <!-- Achievements will be dynamically populated here -->
+      <p>Loading achievements...</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Innovation Excellence Management System. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Fetching and Displaying Achievements -->
+  <script>
+    // Fetch achievements from the backend for the Design department
+    function fetchAchievements() {
+      fetch('/department/design/achievements')
+        .then(response => response.json())
+        .then(data => {
+          displayAchievements(data);
+        })
+        .catch(error => console.error('Error fetching achievements:', error));
+    }
+
+    // Display the achievements
+    function displayAchievements(achievements) {
+      const achievementsList = document.getElementById('achievementsList');
+      achievementsList.innerHTML = ''; // Clear existing achievements
+
+      // Check if any achievements exist
+      if (achievements.length === 0) {
+        achievementsList.innerHTML = '<p>No achievements found for this department.</p>';
+        return;
+      }
+
+      // Create an entry for each achievement
+      achievements.forEach(achievement => {
+        const achievementCard = document.createElement('div');
+        achievementCard.className = 'achievement-card';
+
+        achievementCard.innerHTML = `
+          <h3>${achievement.title}</h3>
+          <p><strong>Student ID:</strong> ${achievement.student_id}</p>
+          <p><strong>Date:</strong> ${achievement.date}</p>
+          <p><strong>Description:</strong> ${achievement.description}</p>
+        `;
+
+        achievementsList.appendChild(achievementCard);
+      });
+    }
+
+    // Search functionality
+    function searchAchievements() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const achievements = document.getElementsByClassName('achievement-card');
+
+      for (let i = 0; i < achievements.length; i++) {
+        const title = achievements[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
+        const studentID = achievements[i].getElementsByTagName('p')[0].textContent.toLowerCase();
+
+        if (title.includes(searchInput) || studentID.includes(searchInput)) {
+          achievements[i].style.display = '';
+        } else {
+          achievements[i].style.display = 'none';
+        }
+      }
+    }
+
+    // Load achievements when the page loads
+    window.onload = fetchAchievements;
+  </script>
+</body>
+</html>

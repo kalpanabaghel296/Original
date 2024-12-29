@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oversee Tracking</title>
+    <link rel="stylesheet" href="oversee_tracking.CSS">
+</head>
+<body>
+    <header>
+        <h1>Oversee Tracking</h1>
+    </header>
+
+    <main>
+        <section class="search-container">
+            <label for="searchInput">Search by Roll No:</label>
+            <input type="text" id="searchInput" placeholder="Enter Roll No (e.g., 2023BTECH039)" onkeyup="searchUser()">
+        </section>
+
+        <section class="tracking-container">
+            <h2>Achievements by Role-Based Users</h2>
+
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Achievements Count</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample rows for testing. Actual data should come from a database or API -->
+                    <tr>
+                        <td>2023BTECH039</td>
+                        <td>John Doe</td>
+                        <td>Administrator</td>
+                        <td>5</td>
+                        <td><a href="achievements.html?roll=2023BTECH039" class="view-button">View Achievements</a></td>
+                    </tr>
+                    <tr>
+                        <td>2023BTECH042</td>
+                        <td>Jane Smith</td>
+                        <td>Faculty</td>
+                        <td>8</td>
+                        <td><a href="achievements.html?roll=2023BTECH042" class="view-button">View Achievements</a></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript function to search by Roll No
+        function searchUser() {
+            const input = document.getElementById("searchInput").value.toUpperCase();
+            const table = document.getElementById("userTable");
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) { // Start from row 1 to skip table header
+                const rollNoCell = rows[i].getElementsByTagName("td")[0];
+                if (rollNoCell) {
+                    const rollNo = rollNoCell.textContent || rollNoCell.innerText;
+                    rows[i].style.display = rollNo.toUpperCase().indexOf(input) > -1 ? "" : "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

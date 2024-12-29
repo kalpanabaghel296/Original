@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pending Achievements</title>
+  <link rel="stylesheet" href="admin_approval.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <h1>Pending Achievements</h1>
+      <nav>
+        <ul>
+          <li><a href="admin_dashboard.html">Dashboard</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h2>Review Pending Achievements</h2>
+    <p>Approve or reject the achievements submitted by users.</p>
+
+    <!-- Pending Achievements List -->
+    <div id="pendingAchievementsList" class="achievements-list">
+      <!-- Manually added achievements -->
+      <div class="achievement-card">
+        <h3>AI-Powered Robot</h3>
+        <p><strong>Student ID:</strong> ST12345</p>
+        <p><strong>Date:</strong> 2024-10-12</p>
+        <p><strong>Description:</strong> Created a robot for real-time object detection.</p>
+        <div class="action-buttons">
+          <button class="approve-btn" onclick="alert('Achievement Approved')">Approve</button>
+          <button class="reject-btn" onclick="alert('Achievement Rejected')">Reject</button>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <h3>Eco-Friendly Packaging</h3>
+        <p><strong>Student ID:</strong> ST67890</p>
+        <p><strong>Date:</strong> 2024-11-05</p>
+        <p><strong>Description:</strong> Developed biodegradable packaging for consumer goods.</p>
+        <div class="action-buttons">
+          <button class="approve-btn" onclick="alert('Achievement Approved')">Approve</button>
+          <button class="reject-btn" onclick="alert('Achievement Rejected')">Reject</button>
+        </div>
+      </div>
+
+      <div class="achievement-card">
+        <h3>Blockchain-Based Voting System</h3>
+        <p><strong>Student ID:</strong> ST11223</p>
+        <p><strong>Date:</strong> 2024-11-08</p>
+        <p><strong>Description:</strong> Designed a secure and transparent voting system using blockchain technology.</p>
+        <div class="action-buttons">
+          <button class="approve-btn" onclick="alert('Achievement Approved')">Approve</button>
+          <button class="reject-btn" onclick="alert('Achievement Rejected')">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Innovation Excellence Management System. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

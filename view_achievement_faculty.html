@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Faculty Achievements</title>
+  <link rel="stylesheet" href="view_achievements_faculty.css">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <h1>Innovation Excellence Management System</h1>
+      <nav>
+        <ul>
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="faculty_dashboard.html">Dashboard</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Search Achievements</h2>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Enter Faculty ID to search...">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <h2>Latest Faculty Achievements</h2>
+    <div id="achievementsList">
+      <!-- Achievements Table -->
+      <table class="achievements-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Faculty ID</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Department Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample Data for Achievements -->
+          <tr>
+            <td>AI Research Paper</td>
+            <td>F12345</td>
+            <td>2024-10-12</td>
+            <td>Published a research paper on AI and Machine Learning in an international journal.</td>
+            <td>IET</td> <!-- Department Type updated -->
+          </tr>
+          <tr>
+            <td>Smart Classroom Design</td>
+            <td>F67890</td>
+            <td>2024-11-05</td>
+            <td>Developed a smart classroom concept integrating IoT for real-time data collection.</td>
+            <td>Design</td> <!-- Department Type updated -->
+          </tr>
+          <tr>
+            <td>Blockchain Technology Seminar</td>
+            <td>F11223</td>
+            <td>2024-11-08</td>
+            <td>Organized a seminar on blockchain technology and its future applications in education.</td>
+            <td>IM</td> <!-- Department Type updated -->
+          </tr>
+          <tr>
+            <td>Cloud Computing Research</td>
+            <td>F44567</td>
+            <td>2024-09-20</td>
+            <td>Completed research on cloud computing and its impact on business scalability.</td>
+            <td>IET</td> <!-- Department Type updated -->
+          </tr>
+          <tr>
+            <td>Smart Healthcare System</td>
+            <td>F89012</td>
+            <td>2024-09-15</td>
+            <td>Developed a smart healthcare monitoring system using wearable IoT devices.</td>
+            <td>Design</td> <!-- Department Type updated -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Innovation Excellence Management System. All Rights Reserved.</p>
+  </footer>
+
+  <script src="view_achievement_faculty.js"></script>
+</body>
+</html>
